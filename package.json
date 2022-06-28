@@ -1,0 +1,19 @@
+{
+  "name": "graphql-basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeiOsmolovskii/GraphQL-basics.git"
+  },
+  "author": "Siarhei Asmalouski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergeiOsmolovskii/GraphQL-basics/issues"
+  },
+  "homepage": "https://github.com/SergeiOsmolovskii/GraphQL-basics#readme"
+}
