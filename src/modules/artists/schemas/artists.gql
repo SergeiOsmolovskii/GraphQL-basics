@@ -10,6 +10,12 @@ type Artist {
   instruments: String
 }
 
+type Member {
+  artist: Artist
+  instruments: String
+  years: String
+}
+
 type Query {
   artist(id: ID!): Artist
   artists: [Artist]
