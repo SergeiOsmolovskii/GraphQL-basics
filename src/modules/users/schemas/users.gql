@@ -6,3 +6,11 @@ type User {
   password: String!
   email: String!
 }
+
+type Query {
+  user(id: ID!): User
+}
+
+type Query {
+  jwt(email: String!, password: String!): String
+}
