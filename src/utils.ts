@@ -12,7 +12,7 @@ export const typeDefsСollection = async () => {
 
   for (let item of schemas) {
     const file = path.join(modules, item.name, 'schemas', item.name + '.gql');
-    const content = await fs.promises.readFile(file, 'utf8');
+    const content = await fs.promises.readFile(file, 'utf8');    
     data.push(content);
   }
 

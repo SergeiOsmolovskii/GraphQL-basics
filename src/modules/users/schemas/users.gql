@@ -2,9 +2,17 @@ type User {
   id: ID!
   firstName: String
   secondName: String
-  middleName: String
-  password: String!
+  password: String
   email: String!
+}
+
+type Mutation {
+  createUser(
+    firstName: String!
+    lastName: String!
+    password: String!
+    email: String!
+  ): User
 }
 
 type Query {
