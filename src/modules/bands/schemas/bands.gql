@@ -7,6 +7,13 @@ type Band {
   genres: String
 }
 
+input BandInput {
+  name: String!
+  origin: String
+  website: String
+  genres: String
+}
+
 type Query {
   band(id: ID!): Band
   bands: [Band]
