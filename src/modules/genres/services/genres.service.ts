@@ -34,4 +34,19 @@ export class genreService extends RESTDataSource {
     return response;
   }
 
+  async updateGenre(id: string, genre): Promise<any> {
+    const response = await this.put(`/${id}`, {
+      name: genre.name,
+      description: genre.description,
+      country: genre.country,
+      year: genre.year
+    });
+    return response;
+  }
+
+  async deleteGenre(id: string): Promise<any> {
+    const response = await this.delete(`/${id}`);
+    return response;
+  }
+
 }
