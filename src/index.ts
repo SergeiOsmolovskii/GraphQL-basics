@@ -18,7 +18,7 @@ const services = {
 const server = new ApolloServer({
     typeDefs,
     resolvers, 
-    csrfPrevention: true,
+    csrfPrevention: true, 
     context: ({ req }) => { 
       const token = req.headers.authorization || '';
       return { token };  
