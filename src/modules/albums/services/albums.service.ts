@@ -24,8 +24,20 @@ export class albumService extends RESTDataSource {
     return response;
   }
 
-  async createAlbum(album): Promise<any> {   
+  async createAlbum(album): Promise<any> {
     const response = await this.post('', album);
+    return response;
+  }
+
+  async updateAlbum(id: string, album): Promise<any> {
+    const response = await this.put(`/${id}`, {
+      ...album,
+    });
+    return response;
+  }
+
+  async deleteAlbum(id: string): Promise<any> {
+    const response = await this.delete(`/${id}`);
     return response;
   }
 }
