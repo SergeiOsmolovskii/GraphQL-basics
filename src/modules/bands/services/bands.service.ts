@@ -25,23 +25,13 @@ export class bandService extends RESTDataSource {
   }
 
   async createBand(band): Promise<any> {   
-    const response = await this.post('', {
-      name: band.name,
-      origin: band.origin,
-      members: band.members,
-      website: band.website,
-      genres: band.genres
-    })
+    const response = await this.post('', band);
     return response;
   }
 
   async updateBand(id: string, band): Promise<any> {
     const response = await this.put(`/${id}`, {
-      name: band.name,
-      origin: band.origin,
-      members: band.members,
-      website: band.website,
-      genresIds: band.genresIds
+      ...band
     })
     return response;
   }

@@ -1,6 +1,6 @@
 export const albumResolver = {
   Query: {
-    albums: async (_, {limit, offset}, { dataSources }) => {
+    albums: async (_, {limit, offset}, { dataSources }) => {     
       return dataSources.albumService.getAllAlbums(limit, offset);
     },
     album: async (_, {id}, { dataSources }) => {
@@ -31,7 +31,7 @@ export const albumResolver = {
       const genres = parent.genresIds.map((id: string) => dataSources.genreService.getGenreById(id));
       return genres;
     },
-    tracks(parent, _, { dataSources }) {      
+    tracks(parent, _, { dataSources }) {
       const tracks = parent.trackIds.map((id: string) => dataSources.trackService.getTrackById(id));
       return tracks;
     }

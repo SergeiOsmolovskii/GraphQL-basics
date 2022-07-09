@@ -25,21 +25,13 @@ export class genreService extends RESTDataSource {
   }
 
   async createGenre(genre): Promise<any> {    
-    const response = await this.post('', {
-      name: genre.name,
-      description: genre.description,
-      country: genre.country,
-      year: genre.year
-    });
+    const response = await this.post('', genre);
     return response;
   }
 
   async updateGenre(id: string, genre): Promise<any> {
     const response = await this.put(`/${id}`, {
-      name: genre.name,
-      description: genre.description,
-      country: genre.country,
-      year: genre.year
+      ...genre
     });
     return response;
   }

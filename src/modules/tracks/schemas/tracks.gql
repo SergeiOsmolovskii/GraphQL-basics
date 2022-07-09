@@ -20,7 +20,7 @@ type deleteTrack {
 }
 
 type Mutation {
-  createTrack(title: String!, album: String, artistsIds: [String], bandsIds: [String], duration: Int, released: Int, genresIds: [String]): Track
-  updateTrack(id: ID!, title: String, album: String, artistsIds: [String], bandsIds: [String], duration: Int, released: Int, genresIds: [String]): Track
+  createTrack(title: String!, albumId: String, artistsIds: [String], bandsIds: [String], duration: Int, released: Int, genresIds: [String]): Track
+  updateTrack(id: ID!, title: String, albumId: String, artistsIds: [String], bandsIds: [String], duration: Int, released: Int, genresIds: [String]): Track
   deleteTrack(id: ID!): deleteTrack
 }

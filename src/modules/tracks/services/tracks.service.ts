@@ -31,13 +31,7 @@ export class trackService extends RESTDataSource {
 
   async updateTrack(id: string, track): Promise<any> {     
     const response = await this.put(`/${id}`, {
-      title: track.title,
-      album: track.album,
-      artistsIds: track.artistsIds,
-      bandsIds: track.bandsIds,
-      duration: track.duration,
-      released: track.released,
-      genresIds: track.genresIds,
+      ...track
     });
     return response;
   }
