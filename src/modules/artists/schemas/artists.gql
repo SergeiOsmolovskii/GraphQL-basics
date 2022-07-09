@@ -1,5 +1,5 @@
 type Artist {
-  id: ID!
+  _id: ID!
   firstName: String
   secondName: String
   middleName: String
@@ -21,28 +21,7 @@ type deleteArtist {
 }
 
 type Mutation {
-  createArtist(
-    firstName: String
-    secondName: String
-    middleName: String
-    birthDate: String
-    birthPlace: String
-    country: String
-    bands: [BandInput]
-    instruments: [String]
-  ): Artist
-
-  updateArtist(
-    id: ID!
-    firstName: String
-    secondName: String
-    middleName: String
-    birthDate: String
-    birthPlace: String
-    country: String
-    bands: [BandInput]
-    instruments: [String]
-  ): Artist
-
+  createArtist(firstName: String!, secondName: String!, middleName: String, birthDate: String, birthPlace: String, country: String!, bandsIds: [String], instruments: [String]): Artist
+  updateArtist(id: ID!, firstName: String, secondName: String, middleName: String, birthDate: String, birthPlace: String, country: String, bandsIds: [String], instruments: [String]): Artist
   deleteArtist(id: ID!): deleteArtist
 }

@@ -1,5 +1,5 @@
 type Favourites {
-  id: ID!
+  _id: ID!
   userId: ID!
   bands: [ID]
   genres: [ID]

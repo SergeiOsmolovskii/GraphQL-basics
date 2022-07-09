@@ -25,16 +25,7 @@ export class artistService extends RESTDataSource {
   }
 
   async createArtist(artist): Promise<any> {
-    const response = await this.post('', {
-      firstName: artist.firstName,
-      secondName: artist.secondName,
-      middleName: artist.middleName,
-      birthDate: artist.birthDate,
-      birthPlace: artist.birthPlace,
-      country: artist.country,
-      bands: artist.bands,
-      instruments: artist.instruments,
-    });
+    const response = await this.post('', artist);
     return response;
   }
 

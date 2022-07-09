@@ -8,14 +8,20 @@ export const artistResolver = {
     }
   },
   Mutation: {
-    createArtist: async (_, {firstName, secondName, middleName, birthDate, birthPlace, country, bands, instruments}, { dataSources }) => {
-      return dataSources.artistService.createArtist({firstName, secondName, middleName, birthDate, birthPlace, country, bands, instruments});
+    createArtist: async (_, artist, { dataSources }) => {
+      return dataSources.artistService.createArtist(artist);
     },
-    updateArtist: async (_, {id, firstName, secondName, middleName, birthDate, birthPlace, country, bands, instruments}, { dataSources }) => {
-      return dataSources.artistService.updateArtist(id, {firstName, secondName, middleName, birthDate, birthPlace, country, bands, instruments});
+    updateArtist: async (_, {id, firstName, secondName, middleName, birthDate, birthPlace, country, bandsIds, instruments}, { dataSources }) => {
+      return dataSources.artistService.updateArtist(id, {firstName, secondName, middleName, birthDate, birthPlace, country, bandsIds, instruments});
     },
     deleteArtist: async (_, {id}, { dataSources }) => {
       return dataSources.artistService.deleteArtist(id);
+    }
+  },
+  Artist: { 
+    bands(parent, _, { dataSources }) {
+      const bands = parent.bandsIds.map((id: string) => dataSources.bandService.getBandById(id));
+      return bands;
     }
   }
 }

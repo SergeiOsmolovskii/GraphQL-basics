@@ -1,5 +1,5 @@
 type Album {
-  id: ID!
+  _id: ID!
   name: String
   released: Int
   artists: [Artist]
@@ -12,4 +12,10 @@ type Album {
 type Query {
   album(id: ID!): Album
   albums: [Album]
+}
+
+type Mutation {
+  createAlbum(name: String, released: Int, artistsIds: [String], bandsIds: [String], trackIds: [String], genresIds: [String], image: String): Album
+  # updateAlbum(id: ID!, name: String, released: Int, image: String): Album
+  # deleteAlbum(id: ID!): Album
 }

@@ -17,5 +17,11 @@ export const bandResolver = {
     deleteBand: async (_, {id}, { dataSources }) => {
       return dataSources.bandService.deleteBand(id);
     }
-  }
+  }, 
+  Band: {
+    genres: async (parent, _, { dataSources }) => {     
+      const genres = parent.genresIds.map((id) => dataSources.genreService.getGenreById(id));
+      return genres;
+    },
+  },
 }
