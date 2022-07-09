@@ -41,7 +41,7 @@ export class bandService extends RESTDataSource {
       origin: band.origin,
       members: band.members,
       website: band.website,
-      genres: band.genres
+      genresIds: band.genresIds
     })
     return response;
   }

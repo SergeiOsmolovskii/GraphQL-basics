@@ -26,6 +26,9 @@ export const resolversCollection = {
   },
   Artist: {
     ...artistResolver.Artist,
+  },
+  Member: {
+    ...bandResolver.Member,
   }
 
 
