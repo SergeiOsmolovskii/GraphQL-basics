@@ -24,12 +24,8 @@ export class albumService extends RESTDataSource {
     return response;
   }
 
-  async createAlbum(album): Promise<any> {
-    const response = await this.post('', {
-      name: album.name,
-      released: album.released,
-      artistsIds: album.artistsIds[0],
-    });
+  async createAlbum(album): Promise<any> {   
+    const response = await this.post('', album);
     return response;
   }
 }

@@ -24,7 +24,7 @@ export class artistService extends RESTDataSource {
     return response;
   }
 
-  async createArtist(artist): Promise<any> {
+  async createArtist(artist): Promise<any> {   
     const response = await this.post('', artist);
     return response;
   }

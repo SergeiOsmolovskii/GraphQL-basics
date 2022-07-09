@@ -1,7 +1,8 @@
 type Track {
-  id: ID!
-  title: String
-  albums: String
+  _id: ID!
+  title: String!
+  album: Album
+  artists: [Artist]
   bands: [Band]
   duration: Int
   released: Int
@@ -11,4 +12,15 @@ type Track {
 type Query {
   track(id: ID!): Track
   tracks: [Track]
+}
+
+type deleteTrack {
+  acknowledged: Boolean!
+  deletedCount: Int
+}
+
+type Mutation {
+  createTrack(title: String!, album: String, artistsIds: [String], bandsIds: [String], duration: Int, released: Int, genresIds: [String]): Track
+  updateTrack(id: ID!, title: String, album: String, artistsIds: [String], bandsIds: [String], duration: Int, released: Int, genresIds: [String]): Track
+  deleteTrack(id: ID!): deleteTrack
 }
