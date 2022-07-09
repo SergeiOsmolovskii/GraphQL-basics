@@ -5,6 +5,7 @@ import { bandResolver } from "./modules/bands/resolvers/bands.resolver.js";
 import { artistResolver } from "./modules/artists/resolvers/artists.resolver.js";
 import { albumResolver } from "./modules/albums/resolvers/albums.resolver.js";
 import { trackResolver } from "./modules/tracks/resolvers/tracks.resolver.js";
+import { favouritesResolver } from "./modules/favourites/resolvers/favourites.resolver.js";
 
 export const resolversCollection = {
   Query: {
@@ -14,7 +15,8 @@ export const resolversCollection = {
     ...bandResolver.Query,
     ...artistResolver.Query,
     ...albumResolver.Query,
-    ...trackResolver.Query
+    ...trackResolver.Query,
+    ...favouritesResolver.Query
   },
   Mutation: {
     ...userResolver.Mutation,
@@ -22,7 +24,8 @@ export const resolversCollection = {
     ...bandResolver.Mutation,
     ...artistResolver.Mutation,
     ...albumResolver.Mutation,
-    ...trackResolver.Mutation
+    ...trackResolver.Mutation,
+    ...favouritesResolver.Mutation
   },
   Band: {
     ...bandResolver.Band,
@@ -38,7 +41,8 @@ export const resolversCollection = {
   },
   Track: {
     ...trackResolver.Track,
-  }
-
-
+  },
+  Favourites: {
+    ...favouritesResolver.Favourites,
+  },
 }
