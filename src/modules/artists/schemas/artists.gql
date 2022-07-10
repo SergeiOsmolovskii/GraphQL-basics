@@ -12,7 +12,7 @@ type Artist {
 
 type Query {
   artist(id: ID!): Artist
-  artists: [Artist]
+  artists(limit: Int, offset: Int): [Artist]
 }
 
 type deleteArtist {

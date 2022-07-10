@@ -7,8 +7,8 @@ type Genre {
 }
 
 type Query {
-  genres: [Genre!]!,
   genre(id: ID!): Genre
+  genres(limit: Int, offset: Int): [Genre],
 }
 
 type deleteGenre {
