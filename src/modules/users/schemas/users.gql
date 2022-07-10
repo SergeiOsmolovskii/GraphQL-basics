@@ -1,8 +1,8 @@
 type User {
-  id: ID!
+  _id: ID!
   firstName: String
   secondName: String
-  password: String
+  password: String!
   email: String!
 }
 
