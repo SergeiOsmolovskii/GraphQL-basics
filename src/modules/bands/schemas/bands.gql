@@ -1,0 +1,24 @@
+type Band {
+  _id: ID!
+  name: String
+  origin: String
+  members: [Member]
+  website: String
+  genres: [Genre]
+}
+
+type Query {
+  band(id: ID!): Band
+  bands(limit: Int, offset: Int): [Band]
+}
+
+type deleteBand {
+  acknowledged: Boolean!
+  deletedCount: Int
+}
+
+type Mutation {
+  createBand(name: String!, origin: String, members: [MemberInput], website: String, genresIds: [String]): Band
+  updateBand(id: ID!, name: String, origin: String, members: [MemberInput], website: String, genresIds: [String]): Band
+  deleteBand(id: ID!): deleteBand
+}

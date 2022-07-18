@@ -1,0 +1,36 @@
+{
+  "name": "graphql-basics",
+  "version": "1.0.0",
+  "description": "graphql-basics",
+  "main": "./src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start:prod": "npm run build && npm run prod",
+    "start:dev": "nodemon --watch src --exec ts-node-esm src/index.ts",
+    "build": "tsc",
+    "prod": "cross-env NODE_ENV=production node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeiOsmolovskii/GraphQL-basics.git"
+  },
+  "author": "Siarhei Asmalouski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergeiOsmolovskii/GraphQL-basics/issues"
+  },
+  "homepage": "https://github.com/SergeiOsmolovskii/GraphQL-basics#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.42",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^3.6.1",
+    "apollo-server": "^3.9.0",
+    "dotenv": "^16.0.1",
+    "graphql": "^16.5.0"
+  }
+}

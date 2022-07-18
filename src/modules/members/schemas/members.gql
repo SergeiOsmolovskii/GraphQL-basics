@@ -1,0 +1,11 @@
+type Member {
+  artist: Artist
+  instrument: String
+  years: [Int]
+}
+
+input MemberInput {
+  artistId: ID!
+  instrument: String
+  years: [Int]
+}
